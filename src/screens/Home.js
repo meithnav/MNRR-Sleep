@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "../components/Home/Banner";
-import About from "../components/Home/About";
+// import About from "../components/Home/About";
 // import Campaigns from "../components/Home/Campaigns";
 // import BeVolunteer from "../components/Home/BeVolunteer";
 // import Article from "../components/Home/Articles";

@@ -13,8 +13,19 @@ import WebcamScreen from "./screens/WebcamScreen";
 
 import "./styles/index.css";
 import "./styles/darkTheme.css";
+import { useContext, useEffect } from "react";
+import { UserContext } from "./utils/UserContext";
 
 function App() {
+  const { user, setUser } = useContext(UserContext);
+
+  useEffect(() => {
+    const currUser = localStorage.getItem("user");
+    if (currUser && !user) {
+      setUser(currUser);
+    }
+  }, [localStorage.getItem("user")]);
+
   return (
     <div className="App">
       <Header />

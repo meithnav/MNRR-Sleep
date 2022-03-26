@@ -9,8 +9,11 @@ export default function Request() {
         <div className="request">
           <img src={volunteer} alt="request" />
           <div>
-            <h1>Every Good act is a Charity.<br />
-            Let's Make a Difference in the Lives of Others</h1>
+            <h1>
+              Sleep is important
+              <br />
+              Keep track of it to maintain your health
+            </h1>
           </div>
           <a href="#" className="read">
             JOIN US
