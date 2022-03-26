@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
 
 const theme = createTheme();
 
@@ -19,10 +20,19 @@ export default function SignInScreen() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    console.log(data.get("remember"));
+    axios
+      .post("/auth/obtain-token/", {
+        username: data.get("username"),
+        password: data.get("password"),
+      })
+      .then((res) => {
+        console.log(res.data.token);
+      })
+      .catch((err) => {
+        console.log(err);
+        ///////////////////    ADD TOAST       ////////////      CHANGE ERROR MESSAGE         ////////////        SAVE IN STORAGE
+      });
   };
 
   return (
@@ -71,10 +81,10 @@ export default function SignInScreen() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="username"
                 autoFocus
               />
               <TextField
@@ -88,7 +98,9 @@ export default function SignInScreen() {
                 autoComplete="current-password"
               />
               <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
+                control={
+                  <Checkbox value={true} name="remember" color="primary" />
+                }
                 label="Remember me"
               />
               <Button

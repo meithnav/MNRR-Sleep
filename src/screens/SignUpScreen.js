@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
 
 const theme = createTheme();
 
@@ -19,10 +20,22 @@ export default function SignUpScreen() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    axios
+      .post("/auth/create-user/", {
+        fname: data.get("firstName"),
+        lname: data.get("lastName"),
+        email: data.get("email"),
+        password: data.get("password"),
+        username: data.get("username"),
+      })
+      .then((res) => {
+        console.log("signed up successfully");
+        console.log(res.data.token);
+        ////////////////      ADD TOAST          ///////////////////         SAVE IN STORAGE
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -103,6 +116,16 @@ export default function SignUpScreen() {
                   <TextField
                     required
                     fullWidth
+                    id="username"
+                    label="Username"
+                    name="username"
+                    autoComplete="username"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
                     name="password"
                     label="Password"
                     type="password"
@@ -113,9 +136,9 @@ export default function SignUpScreen() {
                 <Grid item xs={12}>
                   <FormControlLabel
                     control={
-                      <Checkbox value="allowExtraEmails" color="primary" />
+                      <Checkbox value="agree" name="agree" color="primary" />
                     }
-                    label="I want to receive inspiration, marketing promotions and updates via email."
+                    label="I agree to the company privacy policy."
                   />
                 </Grid>
               </Grid>
