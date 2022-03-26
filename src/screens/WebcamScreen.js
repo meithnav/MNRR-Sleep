@@ -11,6 +11,8 @@ const videoConstraints = {
   facingMode: "user",
 };
 
+let interval;
+
 const WebcamScreen = () => {
   // let socketPath;
   // let chatSocket;
@@ -37,11 +39,13 @@ const WebcamScreen = () => {
   });
 
   const capture = React.useCallback(() => {
-    const ss = webcamRef.current.getScreenshot();
-    setImageSrc(() => ({
-      frame: ss,
-      len: ss.length,
-    }));
+    interval = setInterval(function () {
+      const ss = webcamRef.current.getScreenshot();
+      setImageSrc(() => ({
+        frame: ss,
+        len: ss.length,
+      }));
+    }, 5000);
 
     // if (imageSrc.frame !== "") {
     // console.log("INSIDE IF", imageSrc);
@@ -50,7 +54,7 @@ const WebcamScreen = () => {
   }, [webcamRef]);
 
   const stopCapture = () => {
-    alert(`Stopping Monitoring`);
+    clearInterval(interval);
   };
 
   useEffect(() => {
