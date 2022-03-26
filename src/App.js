@@ -6,8 +6,8 @@ import Blogs from "./screens/Blogs";
 import Home from "./screens/Home";
 import {Header} from  './components/Header'
 import ASMR from "./screens/ASMR";
-import "./styles/darkTheme.css";
 import "./styles/index.css";
+import "./styles/darkTheme.css";
 
 
 import {
