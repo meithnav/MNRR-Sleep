@@ -25,9 +25,9 @@
 }
 
 .dashboard .header {
-  width: calc(100% - 0px);
+  width: calc(100% - 170px);
   text-align: left;
-  padding-left: 50px;
+  padding-left: 170px;
   width: 100%;
   font-family: "Nunito", sans-serif;
   /* border: 1px solid red; */
@@ -86,6 +86,11 @@
   background-color: rgb(113, 235, 26);
 }
 
+
+
+.dashboard .dashGrid .dashCard .score h2 span{
+  display: inline-block;
+}
 .dashboard .dashGrid .dashCard h2 {
   width: fit-content;
   margin: 10px !important;
@@ -97,6 +102,7 @@
   letter-spacing: 1.5px;
   /* border: 1px solid red; */
 }
+
 
 .dashboard .dashGrid .dashCard span {
   display: block;
@@ -118,7 +124,7 @@
   display: block;
   float: left;
   position: relative;
-  width: calc(70% - 30px);
+  width: calc(70% - 90px);
   margin: 14px;
   /* padding: 20px 0; */
   border: 1px solid gray;
@@ -127,6 +133,18 @@
   border: 1px solid rgba(201, 196, 196, 0.767);
   box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
   padding-bottom: 30px;
+    padding: 10px 30px;
+
+}
+
+.dashboard .dashGrid .durationChart h1{
+  text-align: left;
+  padding-left: 20px;
+  /* font-family: var(--card); */
+    font-family: "Nunito", sans-serif;
+  color: var(--headerColor);
+  letter-spacing: 1px;
+  border-left: 6px solid blue;
 }
 
 /* PIE CHART */
@@ -134,7 +152,7 @@
   display: block;
   float: left;
   position: relative;
-  width: calc(30% - 30px);
+  width: calc(30% - 90px);
   margin: 14px;
   /* padding: 20px 0; */
   border: 1px solid gray;
@@ -142,7 +160,8 @@
   overflow: hidden;
   border: 1px solid rgba(201, 196, 196, 0.767);
   box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
-  padding-bottom: 30px;
+  padding: 10px 30px;
+  padding-bottom: 40px;
 }
 
 /* SNORING */
