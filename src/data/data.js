@@ -123,4 +123,4 @@ export const categories = [
 ];
 
 export const base_url =
-  "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io/";
+  "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io";

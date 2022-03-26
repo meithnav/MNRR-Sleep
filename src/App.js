@@ -10,6 +10,8 @@ import { Header } from "./components/Header";
 import BlogDetails from "./screens/BlogDetails";
 import ASMR from "./screens/ASMR";
 import WebcamScreen from "./screens/WebcamScreen";
+import QRCode from "./screens/QRCode";
+
 
 import "./styles/index.css";
 import "./styles/darkTheme.css";
@@ -37,7 +39,9 @@ function App() {
         <Route path="/login" exact element={<SignInScreen />} />
         <Route path="/dashboard" exact element={<Dashboard />} />
         <Route path="/blog" exact element={<Blogs />} />
+        <Route path="/qrcode" exact element={<QRCode />} />
         <Route path="/signup" exact element={<SignUpScreen />} />
+
         <Route
           path="/blog/get-single-blog/:id"
           exact

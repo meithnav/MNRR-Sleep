@@ -45,7 +45,7 @@ const WebcamScreen = () => {
         frame: ss,
         len: ss.length,
       }));
-    }, 5000);
+    }, 30000);
 
     // if (imageSrc.frame !== "") {
     // console.log("INSIDE IF", imageSrc);
