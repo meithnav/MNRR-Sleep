@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/asmr" exact element={<ASMR />} />
-        <Route path="/webcam" exact element={<WebcamScreen />} />
+        <Route path="/monitor" exact element={<WebcamScreen />} />
         <Route path="/login" exact element={<SignInScreen />} />
         <Route path="/dashboard" exact element={<Dashboard />} />
         <Route path="/blog" exact element={<Blogs />} />

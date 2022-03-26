@@ -203,15 +203,17 @@ export const Header = () => {
                 >
                   Home
                 </Link>
-               {user && <Link
-                  to="/dashboard"
-                  className={darkMode ? classes.darklink : classes.link}
-                  style={{
-                    paddingTop: "0.8vh",
-                  }}
-                >
-                  Dashboard
-                </Link>}
+                {user && (
+                  <Link
+                    to="/dashboard"
+                    className={darkMode ? classes.darklink : classes.link}
+                    style={{
+                      paddingTop: "0.8vh",
+                    }}
+                  >
+                    Dashboard
+                  </Link>
+                )}
                 <Link
                   to="/blog"
                   className={darkMode ? classes.darklink : classes.link}
@@ -220,6 +222,16 @@ export const Header = () => {
                   }}
                 >
                   Blogs
+                </Link>
+
+                <Link
+                  to="/monitor"
+                  className={darkMode ? classes.darklink : classes.link}
+                  style={{
+                    paddingTop: "0.8vh",
+                  }}
+                >
+                  Monitor
                 </Link>
 
                 <Link
@@ -248,7 +260,7 @@ export const Header = () => {
                       width: "120px",
                       height: "35px",
                       fontSize: "18px",
-                      margin:"0px 5px",
+                      margin: "0px 5px",
                       backgroundImage: `linear-gradient(to right,#2871FA, #0214FC)`,
                       color: "white",
                     }}
@@ -270,8 +282,8 @@ export const Header = () => {
                       color: "white",
                     }}
                     onClick={() => {
-                      localStorage.removeItem("user")
-                      setUser(null)
+                      localStorage.removeItem("user");
+                      setUser(null);
                     }}
                   >
                     Logout
