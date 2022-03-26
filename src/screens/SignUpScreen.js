@@ -14,29 +14,36 @@ import Paper from "@mui/material/Paper";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logoImg from "../assets/images/sleep.jpeg";
 import axios from "axios";
+import { UserContext } from "../utils/UserContext";
+import toast from "react-hot-toast";
 
 const theme = createTheme();
 
 export default function SignUpScreen() {
+  const { setUser } = React.useContext(UserContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    axios
-      .post("/auth/create-user/", {
-        fname: data.get("firstName"),
-        lname: data.get("lastName"),
-        email: data.get("email"),
-        password: data.get("password"),
-        username: data.get("username"),
-      })
-      .then((res) => {
-        console.log("signed up successfully");
-        console.log(res.data.token);
-        ////////////////      ADD TOAST          ///////////////////         SAVE IN STORAGE
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (data.get("agree") === "agree") {
+      axios
+        .post("/auth/create-user/", {
+          fname: data.get("firstName"),
+          lname: data.get("lastName"),
+          email: data.get("email"),
+          password: data.get("password"),
+          username: data.get("username"),
+        })
+        .then((res) => {
+          setUser(res.data.token);
+          toast.success("Logged in successfully");
+        })
+        .catch((err) => {
+          toast.error(err.response.data.message);
+        });
+    } else {
+      toast.error("Please agree to privacy policy to continue");
+    }
   };
 
   return (
