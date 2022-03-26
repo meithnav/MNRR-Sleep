@@ -18,7 +18,6 @@ import lighttheme from "../assets/images/lighttheme.png";
 import { BorderAll } from "@material-ui/icons";
 import { useNavigate } from "react-router-dom";
 
-
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: "120px",
@@ -73,8 +72,8 @@ const useStyles = makeStyles((theme) => ({
 
 export const Header = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
-  const {user ,setUser} = useContext(UserContext);
-  const navigate = useNavigate()
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -214,6 +213,31 @@ export const Header = () => {
                     Dashboard
                   </Link>
                 )}
+
+                {user && (
+                  <Link
+                    to="/monitor"
+                    className={darkMode ? classes.darklink : classes.link}
+                    style={{
+                      paddingTop: "0.8vh",
+                    }}
+                  >
+                    Monitor
+                  </Link>
+                )}
+
+                {user && (
+                  <Link
+                    to="/qrcode"
+                    className={darkMode ? classes.darklink : classes.link}
+                    style={{
+                      paddingTop: "0.8vh",
+                    }}
+                  >
+                    Connect
+                  </Link>
+                )}
+
                 <Link
                   to="/blog"
                   className={darkMode ? classes.darklink : classes.link}
@@ -225,16 +249,6 @@ export const Header = () => {
                 </Link>
 
                 <Link
-                  to="/monitor"
-                  className={darkMode ? classes.darklink : classes.link}
-                  style={{
-                    paddingTop: "0.8vh",
-                  }}
-                >
-                  Monitor
-                </Link>
-
-                <Link
                   to="/asmr"
                   style={{
                     paddingTop: "0.8vh",
@@ -243,16 +257,6 @@ export const Header = () => {
                 >
                   ASMR
                 </Link>
-
-                {/* <Link
-                  to="/contact"
-                  style={{
-                    paddingTop: "0.8vh",
-                  }}
-                  className={darkMode ? classes.darklink : classes.link}
-                >
-                  Contact
-                </Link> */}
 
                 {!user && (
                   <Button

@@ -16,10 +16,12 @@ import logoImg from "../assets/images/happy.png";
 import axios from "axios";
 import { UserContext } from "../utils/UserContext";
 import "../styles/login.css";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 export default function SignInScreen() {
+  const navigate = useNavigate();
   const { user, setUser, setUserDetails } = React.useContext(UserContext);
 
   const handleSubmit = (event) => {
@@ -36,6 +38,7 @@ export default function SignInScreen() {
         if (data.get("remember") === "remember") {
           localStorage.setItem("user", res.data.token);
         }
+        navigate('/');
       })
       .catch((err) => {
         console.log(err);
