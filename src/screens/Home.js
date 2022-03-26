@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <About />
+      {/* <About /> */}
       {/* <Collage /> */}
       {/* <Events /> */}
 

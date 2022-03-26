@@ -7,6 +7,7 @@ import Dashboard from "./screens/Dashboard";
 import Blogs from "./screens/Blogs";
 import Home from "./screens/Home";
 import { Header } from "./components/Header";
+import BlogDetails from "./screens/BlogDetails";
 import ASMR from "./screens/ASMR";
 import WebcamScreen from "./screens/WebcamScreen";
 
@@ -26,6 +27,12 @@ function App() {
         <Route path="/dashboard" exact element={<Dashboard />} />
         <Route path="/blog" exact element={<Blogs />} />
         <Route path="/signup" exact element={<SignUpScreen />} />
+        <Route
+          path="/blog/get-single-blog/:id"
+          exact
+          element={<BlogDetails />}
+        />
+
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
       {/* </Router> */}
