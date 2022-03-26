@@ -60,13 +60,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     textDecoration: "none",
-    color: "white",
+    color: "#979797",
     fontSize: "18px",
-    marginLeft: "20PX",
-    marginRight: "25px",
+    marginLeft: "10px",
+    marginRight: "15px",
     fontWeight: "450",
     "&:hover": {
-      color: "#979797",
+      color: "black",
     },
   },
 }));
@@ -203,7 +203,7 @@ export const Header = () => {
                 >
                   Home
                 </Link>
-                <Link
+               {user && <Link
                   to="/dashboard"
                   className={darkMode ? classes.darklink : classes.link}
                   style={{
@@ -211,7 +211,7 @@ export const Header = () => {
                   }}
                 >
                   Dashboard
-                </Link>
+                </Link>}
                 <Link
                   to="/blog"
                   className={darkMode ? classes.darklink : classes.link}
@@ -248,6 +248,7 @@ export const Header = () => {
                       width: "120px",
                       height: "35px",
                       fontSize: "18px",
+                      margin:"0px 5px",
                       backgroundImage: `linear-gradient(to right,#2871FA, #0214FC)`,
                       color: "white",
                     }}

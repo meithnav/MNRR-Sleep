@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap");
+
+:root {
+  --header: "Fredoka One", cursive;
+  --text: "DM Sans", sans-serif;
+  --card: "Fredoka", sans-serif;
+  --theme: rgb(230, 98, 59);
+  --default: rgb(170, 64, 240);
+  --environment: rgb(4, 199, 118);
+  --gender: rgb(199, 4, 140);
+  --medical: rgb(0, 217, 255);
+  --education: rgb(255, 162, 49);
+  --headerColor: rgb(70, 59, 59);
+  --backTheme: rgba(216, 214, 209, 0.425);
+}
+
+.dashboard {
+  width: calc(100% - 0px);
+  overflow: hidden;
+  margin-top: 40px;
+  /* border: 1px solid red; */
+}
+
+.dashboard .header {
+  width: calc(100% - 0px);
+  text-align: left;
+  padding-left: 50px;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  /* border: 1px solid red; */
+  color: var(--headerColor);
+  letter-spacing: 1.5px;
+}
+
+.dashboard .dashGrid {
+  display: flow-root;
+  position: relative;
+  width: calc(80% - 0px);
+  margin: 0 auto;
+}
+
+.dashboard .dashGrid .dashCard {
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(25% - 50px);
+  margin: 24px;
+  padding: 20px 0;
+  border: 1px solid gray;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 196, 196, 0.767);
+  box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
+  padding-bottom: 30px;
+}
+
+.dashboard .dashGrid .dashCard:hover {
+  border: 1px solid rgba(179, 175, 175, 0.767);
+  box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.781);
+}
+
+.dashboard .dashGrid .dashCard .icons {
+  padding: 20px;
+  display: block;
+  margin-right: auto;
+  font-size: 50px;
+  margin-left: 50px;
+  border-radius: 20px;
+  background-color: rgb(25, 71, 255);
+  color: white;
+  /* border: 1px solid red; */
+}
+
+.dashboard .dashGrid .dashCard .duration {
+  background-color: #f068db;
+  border: 1px solid rgba(216, 201, 192, 0.568);
+}
+
+.dashboard .dashGrid .dashCard .wake {
+  background-color: rgb(245, 153, 72);
+}
+.dashboard .dashGrid .dashCard .score {
+  background-color: rgb(113, 235, 26);
+}
+
+.dashboard .dashGrid .dashCard h2 {
+  width: fit-content;
+  margin: 10px !important;
+
+  margin-left: 50px !important;
+  font-size: 30px;
+  font-family: var(--card);
+  color: rgb(50, 50, 50);
+  letter-spacing: 1.5px;
+  /* border: 1px solid red; */
+}
+
+.dashboard .dashGrid .dashCard span {
+  display: block;
+  width: fit-content;
+  margin: 0 !important;
+  margin-left: 50px !important;
+  font-size: 15px;
+  font-family: var(--card);
+  color: rgb(108, 108, 108);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  /* border: 1px solid red; */
+}
+
+/* DURATION CHART */
+.dashboard .dashGrid .durationChart {
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(70% - 30px);
+  margin: 14px;
+  /* padding: 20px 0; */
+  border: 1px solid gray;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 196, 196, 0.767);
+  box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
+  padding-bottom: 30px;
+}
+
+/* PIE CHART */
+.dashboard .dashGrid .pieChart {
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(30% - 30px);
+  margin: 14px;
+  /* padding: 20px 0; */
+  border: 1px solid gray;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 196, 196, 0.767);
+  box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
+  padding-bottom: 30px;
+}
+
+/* SNORING */
+
+.dashboard .dashGrid .snoring {
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(70% - 30px);
+  margin: 14px;
+  /* padding: 20px 0; */
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 196, 196, 0.767);
+  box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
+  padding-bottom: 30px;
+}
+
+/* PHOTO */
+
+.dashboard .dashGrid .popUp {
+  display: block;
+  float: left;
+  position: relative;
+  width: calc(30% - 30px);
+  margin: 14px;
+  /* padding: 20px 0; */
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 2px rgba(199, 197, 197, 0.26);
+  padding-top: 0 !important;
+  padding-bottom: 45px;
+}
+
+.dashboard .dashGrid .popUp .txt {
+  position: relative;
+  z-index: 3;
+  color: white;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: calc(100% - 90px );
+
+  background-color: blue;
+}
+
+.dashboard .dashGrid .popUp::after {
+  content: "";
+  z-index: 2;
+  display: block;
+  /* position: absolute; */
+  padding: 30px 40px;
+width: calc(100% - 100px );
+border-radius: 20px;
+  transform: translateX(10px) translateY(-45px);
+  background-color: rgba(186, 204, 245, 0.692);
+}
+
+.dashboard .dashGrid .popUp .txt p {
+  color: white;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  min-height: 150px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.dashboard .dashGrid .popUp img {
+  z-index: 4;
+  display: block;
+  position: absolute;
+  width: 170px;
+  height: auto;
+  right: 0;
+  bottom: 30px;
+}
+
+.dashboard .dashGrid .popUp .txt .Btn {
+  display: block;
+  position: relative;
+  width: fit-content;
+  padding: 8px 10px;
+  font-size: 18px;
+  margin-right: auto;
+  margin-left: 10px;
+  transform: translateY(-20px);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(227, 53, 163),
+    rgb(123, 30, 154)
+  );
+}
+
+.dashboard .dashGrid .popUp .txt .Btn small {
+  display: inline-block;
+  transform: translateY(-3px);
+}

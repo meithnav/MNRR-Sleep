@@ -9,7 +9,9 @@ import Home from "./screens/Home";
 import { Header } from "./components/Header";
 import ASMR from "./screens/ASMR";
 import WebcamScreen from "./screens/WebcamScreen";
+
 import "./styles/index.css";
+import "./styles/darkTheme.css";
 
 function App() {
   return (
