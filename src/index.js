@@ -8,9 +8,9 @@ import { UserProvider } from "./utils/UserContext";
 import { LoadingProvider } from "./utils/LoadingContext";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
+import { base_url } from "./data/data";
 
-axios.defaults.baseURL =
-  "http://84c2-2409-4040-d27-8465-45e9-7c99-e480-7306.ngrok.io/";
+axios.defaults.baseURL = base_url;
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,6 +3,7 @@ import Webcam from "react-webcam";
 import "../styles/monitor.css";
 import { UserContext } from "../utils/UserContext";
 import axios from "axios";
+import { Button } from "@mui/material";
 
 const videoConstraints = {
   width: 1280,
@@ -48,6 +49,10 @@ const WebcamScreen = () => {
     // }
   }, [webcamRef]);
 
+  const stopCapture = () => {
+    alert(`Stopping Monitoring`);
+  };
+
   useEffect(() => {
     console.log(imageSrc);
     if (imageSrc.frame !== "") {
@@ -71,15 +76,24 @@ const WebcamScreen = () => {
       <Webcam
         className="webCam"
         audio={false}
-        height={600}
+        // height={600}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        width={1280}
+        // width={1280}
         videoConstraints={videoConstraints}
       />
-      <button className="click" onClick={capture}>
-        Capture photo
-      </button>
+
+      <Button variant="contained" onClick={capture} className="donateBtn">
+        Start Recording
+      </Button>
+      <Button
+        variant="contained"
+        onClick={stopCapture}
+        className="donateBtn"
+        style={{ marginLeft: "10px" }}
+      >
+        Stop Recording
+      </Button>
     </>
   );
 };

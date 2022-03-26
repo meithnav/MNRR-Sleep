@@ -94,3 +94,32 @@ export const BarData = {
     },
   ],
 };
+
+export const categories = [
+  {
+    id: 0,
+    name: "social",
+  },
+  {
+    id: 4,
+    name: "education",
+  },
+  {
+    id: 1,
+    name: "environment",
+  },
+  {
+    id: 2,
+    name: "bully",
+  },
+  {
+    name: "food",
+    id: 3,
+  },
+  {
+    name: "water",
+    id: 5,
+  },
+];
+
+export const base_url = "http://84c2-2409-4040-d27-8465-45e9-7c99-e480-7306.ngrok.io";

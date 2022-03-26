@@ -11,7 +11,7 @@ export default function DurationChart() {
   return (
     <div className="durationChart">
       <h1>Sleep Stage Chart</h1>
-      <Line
+      <Bar
         data={{
           labels: ["MON", "TUE", "WED", "THUR", "FRI", "SAT", "SUN"],
           datasets: [

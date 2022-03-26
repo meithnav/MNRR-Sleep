@@ -4,7 +4,7 @@ export const LoadingContext = createContext();
 
 export function LoadingProvider(props) {
   // Page Loading:true , DOne Loading : false
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
