@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
 axios.defaults.baseURL =
-  "http://f2cf-2409-4040-e10-c1ba-45b4-c25d-1796-6b2b.ngrok.io";
+  "http://84c2-2409-4040-d27-8465-45e9-7c99-e480-7306.ngrok.io/";
 
 ReactDOM.render(
   <React.StrictMode>

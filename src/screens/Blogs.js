@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const base_url = "http://f2cf-2409-4040-e10-c1ba-45b4-c25d-1796-6b2b.ngrok.io";
+const base_url = "http://485e-2409-4040-e10-c1ba-ddf7-3950-a2ea-4010.ngrok.io";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

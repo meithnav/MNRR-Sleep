@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import "../styles/monitor.css";
 import { UserContext } from "../utils/UserContext";
+import axios from "axios";
 
 const videoConstraints = {
   width: 1280,
@@ -10,39 +11,60 @@ const videoConstraints = {
 };
 
 const WebcamScreen = () => {
-  let socketPath;
-  let chatSocket;
-  const { user } = useContext(UserContext);
+  // let socketPath;
+  // let chatSocket;
+  const { user, userDetails } = useContext(UserContext);
   const webcamRef = React.useRef(null);
 
-  useEffect(() => {
-    socketPath = `wss://485e-2409-4040-e10-c1ba-ddf7-3950-a2ea-4010.ngrok.io/receiver/`;
-    chatSocket = new WebSocket(socketPath);
+  // useEffect(() => {
+  //   socketPath = `wss://485e-2409-4040-e10-c1ba-ddf7-3950-a2ea-4010.ngrok.io/receiver/`;
+  //   chatSocket = new WebSocket(socketPath);
 
-    chatSocket.onopen = (e) => {
-      console.log("Opening a connection...");
-      window.identified = false;
-    };
+  //   chatSocket.onopen = (e) => {
+  //     console.log("Opening a connection...");
+  //     window.identified = false;
+  //   };
 
-    return () => {
-      chatSocket.close();
-    };
-  }, []);
+  //   return () => {
+  //     chatSocket.close();
+  //   };
+  // }, []);
 
-  const [imageSrc, setImageSrc] = useState({ text: "" });
+  const [imageSrc, setImageSrc] = useState({
+    frame: "",
+    len: 0,
+  });
 
   const capture = React.useCallback(() => {
-    setImageSrc(() => ({ text: webcamRef.current.getScreenshot() }));
+    const ss = webcamRef.current.getScreenshot();
+    setImageSrc(() => ({
+      frame: ss,
+      len: ss.length,
+    }));
 
-    if (imageSrc.text !== "") {
-    console.log("INSIDE IF", imageSrc);
-    chatSocket.send(JSON.stringify(imageSrc));
-    }
+    // if (imageSrc.frame !== "") {
+    // console.log("INSIDE IF", imageSrc);
+    // chatSocket.send(JSON.stringify(imageSrc));
+    // }
   }, [webcamRef]);
 
   useEffect(() => {
     console.log(imageSrc);
-  }, [imageSrc]);
+    if (imageSrc.frame !== "") {
+      axios
+        .post("/frame-capture/receive-data/", imageSrc, {
+          headers: {
+            Authorization: `Token ${user}`,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [imageSrc, user]);
 
   return (
     <>

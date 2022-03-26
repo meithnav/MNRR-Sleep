@@ -12,17 +12,19 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import logoImg from  '../assets/images/happy.png';
+import logoImg from "../assets/images/happy.png";
 import axios from "axios";
+import { UserContext } from "../utils/UserContext";
+import "../styles/login.css";
 
-import '../styles/login.css'
 const theme = createTheme();
 
 export default function SignInScreen() {
+  const { user, setUser, setUserDetails } = React.useContext(UserContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log(data.get("remember"));
     axios
       .post("/auth/obtain-token/", {
         username: data.get("username"),
@@ -30,10 +32,29 @@ export default function SignInScreen() {
       })
       .then((res) => {
         console.log(res.data.token);
+        setUser(res.data.token);
+        if (data.get("remember") === "remember") {
+          localStorage.setItem("user", res.data.token);
+        }
       })
       .catch((err) => {
         console.log(err);
         ///////////////////    ADD TOAST       ////////////      CHANGE ERROR MESSAGE         ////////////        SAVE IN STORAGE
+      });
+    axios
+      .get("/auth/get-user/", {
+        headers: {
+          Authorization: `Token ${user}`,
+        },
+      })
+      .then((res) => {
+        setUserDetails(res.data);
+        if (data.get("remember") === "remember") {
+          localStorage.setItem("userDetails", JSON.stringify(res.data));
+        }
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -57,7 +78,6 @@ export default function SignInScreen() {
             backgroundPosition: "center",
           }}
         >
-
           <img src={logoImg} alt=" " className="logo" />
         </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -104,7 +124,7 @@ export default function SignInScreen() {
               />
               <FormControlLabel
                 control={
-                  <Checkbox value={true} name="remember" color="primary" />
+                  <Checkbox value="remember" name="remember" color="primary" />
                 }
                 label="Remember me"
               />

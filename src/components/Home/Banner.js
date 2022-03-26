@@ -12,7 +12,7 @@ export default function Banner() {
         <div className="banner_txt">
           <p>Monitor your sleep</p>
           <h1>Anything that isn't managed will decline</h1>
-          <a href="#">Monitor</a>
+          <a href="/monitor">Monitor</a>
           <a className="a_last" href="#">
             Explore
           </a>
