@@ -12,7 +12,9 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import logoImg from  '../assets/images/happy.png';
 
+import '../styles/login.css'
 const theme = createTheme();
 
 export default function SignInScreen() {
@@ -35,7 +37,7 @@ export default function SignInScreen() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: { logoImg },
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -44,7 +46,10 @@ export default function SignInScreen() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-        />
+        >
+
+          <img src={logoImg} alt=" " className="logo" />
+        </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{

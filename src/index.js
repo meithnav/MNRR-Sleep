@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from "./utils/ThemeContext";
+import { UserProvider } from "./utils/UserContext";
+import { LoadingProvider } from "./utils/LoadingContext";
+import { BrowserRouter } from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ThemeProvider>
+        <LoadingProvider>
+          <UserProvider>
+            <App />
+          </UserProvider>
+        </LoadingProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

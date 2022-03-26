@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import logoImg from "../assets/images/sleep.jpeg";
 
 const theme = createTheme();
 
@@ -35,7 +36,7 @@ export default function SignUpScreen() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: { logoImg },
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -44,7 +45,9 @@ export default function SignUpScreen() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-        />
+        >
+          <img src={logoImg} alt="" className="logo" />
+        </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
