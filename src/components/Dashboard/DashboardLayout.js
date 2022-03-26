@@ -39,7 +39,11 @@ export default function DashboardLayout() {
 
         <div className="dashCard">
           <BoltIcon className="icons  score" />
-          <h2>{data.score}</h2>
+          <h2>
+            
+              {data.score} 
+            
+          </h2>
           <span>Sleep Score</span>
         </div>
       </div>
