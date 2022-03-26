@@ -20,7 +20,7 @@
 .qrcode .header{
   display: block;
   position: relative;
-  font-size: 34px;
+  font-size: 50px;
   letter-spacing: 1px;
   width: 100%;
   font-family: var(--header);
@@ -28,4 +28,12 @@
   font-weight: 500;
   margin-bottom: 0 !important;
       text-align: center;
+}
+
+.qrcode .qr{
+  width: calc(20% - 0px);
+  height: auto;
+  margin: 60px auto;
+
+
 }
