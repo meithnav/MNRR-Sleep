@@ -10,8 +10,8 @@ export default function Banner() {
         <img src={rightPic} className="rightpic" alt="rightpic" />
 
         <div className="banner_txt">
-          <p>Help people in need</p>
-          <h1>Lend a helping hand and get involved..</h1>
+          <p>Monitor your sleep</p>
+          <h1>Anything that isn't managed will decline</h1>
           <a href="#">Monitor</a>
           <a className="a_last" href="#">
             Explore
