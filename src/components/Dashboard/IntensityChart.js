@@ -15,6 +15,11 @@ let labels;
 export default function IntensityChart({ value, setValue }) {
   const { user } = useContext(UserContext);
   const [intensity, setIntensity] = useState([]);
+  // const [moveL, setMoveL] = useState(0);
+  // const [moveR, setMoveR] = useState(0);
+  let moveL=0; 
+  let moveR=0;
+
   const { isLoading, setIsLoading } = useContext(LoadingContext);
 
   //   let labels = intensity?.map(function (x) {
@@ -45,16 +50,41 @@ export default function IntensityChart({ value, setValue }) {
       return x.id * 30;
     });
 
-    setValue(intensity.map(function (x) {
-      return x.datapoints;
-    }));
+    setValue(
+      intensity.map(function (x) {
+        return x.datapoints;
+      })
+    );
+
+    setValue(
+      intensity.map(function (x) {
+        return x.datapoints;
+      })
+    );
+
+    intensity.map((ele) => {
+      console.log(ele.movement);
+      if (ele.movement === "Left") {
+        // setMoveL(moveL + 1);
+        moveL+=1;
+    console.log("LEFT : ", moveL);
+      } else if (ele.movement === "Right") {
+        // setMoveR(moveR + 1);
+        moveR+=1
+            console.log("RIGHT : ", moveR);
+
+      }
+    });
 
     console.log("LABELS : ", labels);
     console.log("VALUES : ", value);
+
     setIsLoading(false);
-  }, [intensity]);
+  }, [intensity, moveR, moveL]);
 
   useEffect(() => {
+    console.log("LEFT : ", moveL);
+    console.log("RIGHT : ", moveR);
     setIsLoading(false);
     //  window.location.reload(false);
   }, [value]);
@@ -121,6 +151,10 @@ export default function IntensityChart({ value, setValue }) {
         height={180}
         width={380}
       />
+
+      <div>
+        
+      </div>
     </div>
   );
 }
