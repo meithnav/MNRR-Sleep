@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import toast from "react-hot-toast";
 import { LoadingContext } from "../utils/LoadingContext";
 import LoaderComp from "../components/LoaderComp";
+import '../styles/home.css';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -41,7 +42,7 @@ export default function ASMR() {
         <LoaderComp />
       ) : (
         <>
-          <h1>ASMR</h1>
+          <h1 className="header">ASMR</h1>
           <Box sx={{ flexGrow: 1, padding: 3 }}>
             <Grid container spacing={4}>
               {sounds.map((sound) => (

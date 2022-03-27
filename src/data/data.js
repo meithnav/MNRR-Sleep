@@ -39,32 +39,31 @@ export const defualtEmail = {
 };
 
 export const pie = {
-  labels: ["LEFTMOVEMENT", "RIGHT MOVEMENT", "STILL", "NO. OF COUGHS", "", "Orange"],
+  labels: ["LEFT MOVEMENT", "RIGHT MOVEMENT", "NO.OF SNORES", "NO. OF COUGHS"],
   datasets: [
     {
-      label: "MOVEMENTS DISTRIBUTION IN SLEEP",
-      data: [12, 19, 3, 5, 2, 3],
+      label: "RATIO DISTRIBUTION OF MOVEMENTS IN SLEEP",
+      data: [12, 19, 23, 30],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
+        "rgba(255, 99, 132, 0.5)",
+        "rgba(54, 162, 235, 0.5)",
+        "rgba(255, 206, 86, 0.5)",
+        "rgba(75, 192, 192, 0.5)",
+        // "rgba(153, 102, 255, 0.5)",
+        // "rgba(255, 159, 64, 0.5)",
       ],
       borderColor: [
         "rgba(255, 99, 132, 1)",
         "rgba(54, 162, 235, 1)",
         "rgba(255, 206, 86, 1)",
         "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
+        // "rgba(153, 102, 255, 1)",
+        // "rgba(255, 159, 64, 1)",
       ],
       borderWidth: 1,
     },
   ],
 };
-
 
 // LINE
 
@@ -109,12 +108,11 @@ export const categories = [
   },
 ];
 
-
-
 // INTENSITY
 const N = 100;
 export const intensity = Array.from({ length: 40 }, () =>
   Math.floor(Math.random() * 50)
 );
 
-export const base_url = "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io";
+export const base_url =
+  "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io";

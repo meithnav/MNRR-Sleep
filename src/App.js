@@ -16,9 +16,12 @@ import "./styles/index.css";
 import "./styles/darkTheme.css";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./utils/UserContext";
+import {ThemeContext} from './utils/ThemeContext';
 
 function App() {
   const { user, setUser } = useContext(UserContext);
+    const { darkMode} = useContext(ThemeContext);
+
 
   useEffect(() => {
     const currUser = localStorage.getItem("user");
@@ -28,7 +31,7 @@ function App() {
   }, [localStorage.getItem("user")]);
 
   return (
-    <div className="App">
+    <div className={darkMode ? "App darkBG" : "App lightBG"}>
       <Header />
       {/* <Router> */}
       <Routes>
@@ -47,8 +50,8 @@ function App() {
           element={<BlogDetails />}
         />
 
-        {user && <Route path="*" element={<Navigate to="/" replace />} />}
-        {!user && <Route path="*" element={<Navigate to="/login" replace />} />}
+        <Route path="*" element={<Navigate to="/" />} />
+        {/* {!user && <Route path="*" element={<Navigate to="/login" replace />} />} */}
       </Routes>
       {/* </Router> */}
       <Toaster />

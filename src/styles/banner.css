@@ -13,7 +13,7 @@
     width: calc(100% - 0px);
     height: calc(100vh - 60px);
     border: 1px  solid rgb(242, 240 ,236);
-    background-color: rgb(242, 240 ,236);
+    /* background-color: rgb(242, 240 ,236); */
 }
 
 

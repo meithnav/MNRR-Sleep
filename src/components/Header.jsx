@@ -78,9 +78,10 @@ export const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  // const HandleTheme = ()=> {
-  //   setDarkMode(!darkMode);
-  // }
+  const HandleTheme = () => {
+    setDarkMode(!darkMode);
+    console.log(darkMode);
+  };
 
   return (
     <div className={darkMode ? "darkBG" : "lightBG"}>
@@ -128,7 +129,7 @@ export const Header = () => {
                 </div>
               </Link>
 
-              <div onClick={() => setDarkMode(!darkMode)}>
+              <div onClick={HandleTheme}>
                 <img
                   src={lighttheme}
                   alt="logo"

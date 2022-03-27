@@ -1,14 +1,16 @@
-import React , {useEffect} from 'react'
+import React , {useEffect, useContext} from 'react'
 import { Chart as ChartJS, registerables } from "chart.js";
-import { Line, Bar, Chart } from "react-chartjs-2";
+import {  Bar } from "react-chartjs-2";
 ChartJS.register(...registerables);
 
 
 
 export default function DurationChart() {
 
+
   return (
-    <div className="durationChart">
+    
+      <div className="durationChart">
       <h1>Sleep Stage Chart</h1>
       <Bar
         data={{
@@ -58,6 +60,7 @@ export default function DurationChart() {
         width={380}
       />
     </div>
+
   );
 }
 

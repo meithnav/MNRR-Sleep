@@ -10,13 +10,23 @@ import Snoring from "./Snoring";
 import PopUp from "./PopUp";
 import IntensityChart from "./IntensityChart";
 
-export default function DashboardLayout() {
-  const data = {
-    "score": 5,
-    "avgDuration": "5h 37m",
-    avgBed: "10:00 PM",
-    avgWakeUp: "7:00 AM",
-  };
+export default function DashboardLayout({ value, setValue }) {
+  const data = 
+    {
+      newUser: false,
+      score: 5,
+      avgDuration: "5h 37m",
+      avgBed: "10:00 PM",
+      avgWakeUp: "7:00 AM",
+    }
+    // {
+    //   newUser: true,
+    //   score: "--",
+    //   avgDuration: "--",
+    //   avgBed: "--",
+    //   avgWakeUp: "--",
+    // },
+  
 
   return (
     <>
@@ -51,7 +61,7 @@ export default function DashboardLayout() {
       </div>
       <div className="dashGrid">
         {/* <Snoring /> */}
-        <IntensityChart />
+        <IntensityChart value={value} setValue={setValue} />
         <PopUp />
       </div>
 
@@ -61,6 +71,4 @@ export default function DashboardLayout() {
       </div> */}
     </>
   );
-
-
 }

@@ -10,13 +10,14 @@ export default function Request() {
           <img src={volunteer} alt="request" />
           <div>
             <h1>
-              Sleep is important
+            Trouble in sleeping ?
               <br />
-              Keep track of it to maintain your health
+              ASMR helps to activate regions of the brain associated with calming, sleep-inducing
+              hormones like dopamine and oxytocin. 
             </h1>
           </div>
-          <a href="#" className="read">
-            JOIN US
+          <a href="/asmr" className="read">
+            EXPLORE
           </a>
         </div>
       </div>
