@@ -12,11 +12,14 @@ const videoConstraints = {
 };
 
 let interval;
+let timestart;
+let timeend;
+var date = new Date();
 
 const WebcamScreen = () => {
   // let socketPath;
   // let chatSocket;
-  const { user, userDetails } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const webcamRef = React.useRef(null);
 
   // useEffect(() => {
@@ -39,6 +42,7 @@ const WebcamScreen = () => {
   });
 
   const capture = React.useCallback(() => {
+    timestart = new Date(date).getTime();
     interval = setInterval(function () {
       const ss = webcamRef.current.getScreenshot();
       setImageSrc(() => ({
@@ -55,6 +59,26 @@ const WebcamScreen = () => {
 
   const stopCapture = () => {
     clearInterval(interval);
+    const now = new Date();
+    timeend = new Date(now).getTime();
+    let duration = (timeend - timestart) / 1000 / 60 / 60;
+    axios
+      .post(
+        "/frame-capture/post-sleep-data/",
+        { duration },
+        {
+          headers: {
+            Authorization: `Token ${user}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        console.log("details saved");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
