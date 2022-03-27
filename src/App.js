@@ -17,11 +17,23 @@ import "./styles/darkTheme.css";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./utils/UserContext";
 import {ThemeContext} from './utils/ThemeContext';
+// Animations Library
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function App() {
   const { user, setUser } = useContext(UserContext);
-    const { darkMode} = useContext(ThemeContext);
-
+  const { darkMode } = useContext(ThemeContext);
+  // ON SCROLL ANIMATIONS
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 600,
+      easing: "ease-in-sine",
+      startEvent: "load",
+    });
+  }, []);
 
   useEffect(() => {
     const currUser = localStorage.getItem("user");

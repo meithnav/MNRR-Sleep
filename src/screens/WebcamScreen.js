@@ -118,7 +118,7 @@ const WebcamScreen = () => {
         variant="contained"
         onClick={stopCapture}
         className="donateBtn"
-        style={{ marginLeft: "10px" }}
+        style={{ marginLeft: "10px"}}
       >
         Stop Recording
       </Button>

@@ -50,7 +50,14 @@ export default function Blogs() {
           <Box sx={{ flexGrow: 1, padding: 3 }}>
             <Grid container spacing={3}>
               {blogs.map((blog) => (
-                <Grid item xs={4} key={blog.id}>
+                <Grid
+                  item
+                  xs={4}
+                  key={blog.id}
+                  data-aos="fade-down"
+                  data-aos-duration="300"
+                  data-aos-delay="100"
+                >
                   <a
                     onClick={() => navigate(`/blog/get-single-blog/${blog.id}`)}
                   >

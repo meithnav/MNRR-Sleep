@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import toast from "react-hot-toast";
 import { LoadingContext } from "../utils/LoadingContext";
 import LoaderComp from "../components/LoaderComp";
-import '../styles/home.css';
+import "../styles/home.css";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -23,13 +23,12 @@ export default function ASMR() {
   const { isLoading, setIsLoading } = useContext(LoadingContext);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     axios
       .get("/audio/get-sounds/")
       .then((res) => {
         setSounds(res.data);
-         setIsLoading(false);
-
+        setIsLoading(false);
       })
       .catch((err) => {
         toast.error(err.response.data.message);
@@ -45,8 +44,15 @@ export default function ASMR() {
           <h1 className="header">ASMR</h1>
           <Box sx={{ flexGrow: 1, padding: 3 }}>
             <Grid container spacing={4}>
-              {sounds.map((sound) => (
-                <Grid item xs={3} key={sound.id}>
+              {sounds.map((sound, index) => (
+                <Grid
+                  item
+                  xs={3}
+                  key={sound.id}
+                  data-aos={index % 4 == 0 ? "fade-right" : "fade-left"}
+                  data-aos-duration="500"
+                  data-aos-delay="300"
+                >
                   <Item>
                     <iframe
                       width="300"

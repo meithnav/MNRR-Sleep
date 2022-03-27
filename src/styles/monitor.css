@@ -3,5 +3,7 @@
     margin: 30px auto;
     width: calc(80% - 0px);
         height: calc(65vh - 0px);
+        padding-bottom: 100px;
+        margin-bottom: 30px;
 
 }

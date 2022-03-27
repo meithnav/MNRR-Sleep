@@ -31,38 +31,76 @@ export default function DashboardLayout({ value, setValue }) {
   return (
     <>
       <div className="dashGrid">
-        <div className="dashCard">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="500"
+          data-aos-delay="100"
+          className="dashCard"
+        >
           <NightlightRoundIcon className="icons " />
           <h2>{data.avgBed}</h2>
           <span>Avg Went To Bed</span>
         </div>
 
-        <div className="dashCard">
+        <div
+          className="dashCard"
+          data-aos="fade-down"
+          data-aos-duration="500"
+          data-aos-delay="100"
+        >
           <LightModeIcon className="icons wake" />
           <h2>{data.avgWakeUp}</h2>
           <span>Avg Wake Up</span>
         </div>
 
-        <div className="dashCard">
+        <div
+          className="dashCard"
+          data-aos="fade-down"
+          data-aos-duration="500"
+          data-aos-delay="100"
+        >
           <HotelIcon className="icons duration" />
           <h2>{data.avgDuration}</h2>
           <span>Avg Sleep</span>
         </div>
 
-        <div className="dashCard">
+        <div
+          className="dashCard"
+          data-aos="fade-down"
+          data-aos-duration="500"
+          data-aos-delay="100"
+        >
           <BoltIcon className="icons  score" />
           <h2>{data.score}</h2>
           <span>Sleep Score</span>
         </div>
       </div>
       <div className="dashGrid">
-        <DurationChart />
-        <PieChart />
+        <DurationChart
+          data-aos="fade-right"
+          data-aos-duration="300"
+          data-aos-delay="300"
+        />
+        <PieChart
+          data-aos="fade-left"
+          data-aos-duration="300"
+          data-aos-delay="300"
+        />
       </div>
       <div className="dashGrid">
         {/* <Snoring /> */}
-        <IntensityChart value={value} setValue={setValue} />
-        <PopUp />
+        <IntensityChart
+          value={value}
+          setValue={setValue}
+          data-aos="fade-right"
+          data-aos-duration="300"
+          data-aos-delay="300"
+        />
+        <PopUp
+          data-aos="fade-left"
+          data-aos-duration="300"
+          data-aos-delay="300"
+        />
       </div>
 
       {/* <div className="dashGrid">

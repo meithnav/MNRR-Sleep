@@ -3,16 +3,16 @@
 
 
 :root{
-  --header: 'Fredoka One', cursive;;
-    --text: 'DM Sans', sans-serif;;
+  --header: 'Fredoka One', cursive;
+    --text: 'DM Sans', sans-serif;
 }
 
 .banner{
     display: block;
     position: relative;
     width: calc(100% - 0px);
-    height: calc(100vh - 60px);
-    border: 1px  solid rgb(242, 240 ,236);
+    height: calc(100vh - 200px);
+    /* border: 1px  solid rgb(242, 240 ,236); */
     /* background-color: rgb(242, 240 ,236); */
 }
 
@@ -21,7 +21,7 @@
     display: block;
     position: absolute;
     right: 80px;
-    top: 20%;
+    top: 10%;
     width: 35vw;
     height: auto;
 }

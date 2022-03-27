@@ -24,9 +24,16 @@ export default function Dashboard() {
       ) : (
         <>
           <div className="dashboard">
-            <h1 className="header">Hi, Welcome Back</h1>
+            <h1
+              className="header"
+              data-aos="fade-left"
+              data-aos-duration="300"
+              data-aos-delay="300"
+            >
+              Hi, Welcome Back
+            </h1>
 
-            <DashboardLayout value={value} setValue ={setValue} />
+            <DashboardLayout value={value} setValue={setValue} />
           </div>
         </>
       )}
