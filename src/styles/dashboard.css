@@ -137,7 +137,9 @@
 
 }
 
-.dashboard .dashGrid .durationChart h1{
+.dashboard .dashGrid .durationChart h1,
+.dashboard .dashGrid .pieChart h1{
+
   text-align: left;
   padding-left: 20px;
   /* font-family: var(--card); */
