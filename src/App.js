@@ -12,7 +12,6 @@ import ASMR from "./screens/ASMR";
 import WebcamScreen from "./screens/WebcamScreen";
 import QRCode from "./screens/QRCode";
 
-
 import "./styles/index.css";
 import "./styles/darkTheme.css";
 import { useContext, useEffect } from "react";
@@ -35,12 +34,12 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/asmr" exact element={<ASMR />} />
-        <Route path="/monitor" exact element={<WebcamScreen />} />
-        <Route path="/login" exact element={<SignInScreen />} />
-        <Route path="/dashboard" exact element={<Dashboard />} />
+        {user && <Route path="/monitor" exact element={<WebcamScreen />} />}
+        {!user && <Route path="/login" exact element={<SignInScreen />} />}
+        {user && <Route path="/dashboard" exact element={<Dashboard />} />}
         <Route path="/blog" exact element={<Blogs />} />
-        <Route path="/qrcode" exact element={<QRCode />} />
-        <Route path="/signup" exact element={<SignUpScreen />} />
+        {user && <Route path="/qrcode" exact element={<QRCode />} />}
+        {!user && <Route path="/signup" exact element={<SignUpScreen />} />}
 
         <Route
           path="/blog/get-single-blog/:id"
@@ -48,7 +47,8 @@ function App() {
           element={<BlogDetails />}
         />
 
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        {user && <Route path="*" element={<Navigate to="/" replace />} />}
+        {!user && <Route path="*" element={<Navigate to="/login" replace />} />}
       </Routes>
       {/* </Router> */}
       <Toaster />
