@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line, Bar, Chart } from "react-chartjs-2";
 ChartJS.register(...registerables);
@@ -7,7 +7,6 @@ ChartJS.register(...registerables);
 
 export default function DurationChart() {
 
-   
   return (
     <div className="durationChart">
       <h1>Sleep Stage Chart</h1>

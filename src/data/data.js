@@ -39,10 +39,10 @@ export const defualtEmail = {
 };
 
 export const pie = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: ["LEFTMOVEMENT", "RIGHT MOVEMENT", "STILL", "NO. OF COUGHS", "", "Orange"],
   datasets: [
     {
-      label: "Daily Sleep hours",
+      label: "MOVEMENTS DISTRIBUTION IN SLEEP",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
@@ -65,28 +65,15 @@ export const pie = {
   ],
 };
 
-// export const BarOptions = {
-//   maintainAspectRatio: false,
-//   responsive: true,
-//   plugins: {
-//     legend: {
-//       position: "top",
-//     },
-//     title: {
-//       display: true,
-//       text: "Daily Sleep Duration",
-//     },
-//   },
-// };
 
 // LINE
 
-// const labels = ["January", "February", "March", "April", "May", "June"];
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
 export const BarData = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  labels,
   datasets: [
     {
-      label: "Months ",
+      label: "Months wise Avg Sleep Distribution",
       data: [12, 19, 3, 5, 2, 3],
 
       borderColor: "rgb(255, 99, 132)",
@@ -122,5 +109,12 @@ export const categories = [
   },
 ];
 
-export const base_url =
-  "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io";
+
+
+// INTENSITY
+const N = 100;
+export const intensity = Array.from({ length: 40 }, () =>
+  Math.floor(Math.random() * 50)
+);
+
+export const base_url = "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io";

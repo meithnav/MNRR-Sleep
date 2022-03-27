@@ -8,6 +8,8 @@ import DurationChart from "./DurationChart";
 import PieChart from "./PieChart";
 import Snoring from "./Snoring";
 import PopUp from "./PopUp";
+import IntensityChart from "./IntensityChart";
+
 export default function DashboardLayout() {
   const data = {
     "score": 5,
@@ -39,24 +41,24 @@ export default function DashboardLayout() {
 
         <div className="dashCard">
           <BoltIcon className="icons  score" />
-          <h2>
-            
-              {data.score} 
-            
-          </h2>
+          <h2>{data.score}</h2>
           <span>Sleep Score</span>
         </div>
       </div>
-
       <div className="dashGrid">
         <DurationChart />
         <PieChart />
       </div>
-
       <div className="dashGrid">
-        <Snoring />
+        {/* <Snoring /> */}
+        <IntensityChart />
         <PopUp />
       </div>
+
+      {/* <div className="dashGrid">
+        <Snoring />
+        <PopUp />
+      </div> */}
     </>
   );
 
