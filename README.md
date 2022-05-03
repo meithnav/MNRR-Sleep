@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+## Sweet Melodies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Landing Page
+![sleep_home](https://user-images.githubusercontent.com/66678522/166414780-7cced81e-83fa-4db8-8f67-bb5a7073b631.jpeg)
 
-In the project directory, you can run:
+### Chat Bot Assistance
+![sleep](https://user-images.githubusercontent.com/66678522/166414795-ac2fe35e-f4c4-4fff-bd68-9ff4010a5bf5.jpeg)
 
-### `npm start`
+### Dashboard
+![sleep_dash](https://user-images.githubusercontent.com/66678522/166414802-b38d22ff-9011-4e24-a4da-3d84a53d58f1.jpeg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![sleep1](https://user-images.githubusercontent.com/66678522/166414807-dca11460-3ce6-4b77-961d-24b29377327d.jpeg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Camera for Sleep Monitoring
+![sleep_cam](https://user-images.githubusercontent.com/66678522/166414815-f8682b87-7c6b-45bb-9a74-ba09ecb17033.jpeg)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### QR Scanner to connect to mobile
+![sleep_qr](https://user-images.githubusercontent.com/66678522/166414825-c2cdf868-65de-4df2-803e-f928797c0a1c.jpeg)
