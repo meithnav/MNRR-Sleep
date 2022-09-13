@@ -95,13 +95,15 @@
 .blog .recentBLog .recentArticle .imgLeft {
   float: left;
   width: calc(30% - 0px);
+  display: block;
+  height: fit-content;
   /* border: 1px solid rgb(0, 255, 64); */
 }
 
-.blog .recentBLog .recentArticle .imgLeft img {
+.blog .recentBLog .recentArticle .imgLeft img{
   display: block;
-  width: calc(100% - 30px);
-  height: auto;
+  width: calc(100% - 20px);
+  height: calc(100% - 0px) !important;
   margin: 5px 15px;
   border-radius: 14px;
   transition: all 0.15s linear;

@@ -289,6 +289,7 @@ export const Header = () => {
                     onClick={() => {
                       localStorage.removeItem("user");
                       setUser(null);
+                      navigate('/')
                     }}
                   >
                     Logout

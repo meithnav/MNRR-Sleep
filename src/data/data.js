@@ -114,5 +114,4 @@ export const intensity = Array.from({ length: 40 }, () =>
   Math.floor(Math.random() * 50)
 );
 
-export const base_url =
-  "http://5c30-2409-4040-d27-8465-75f6-5131-793d-1a3.ngrok.io";
+export const base_url = "http://87a6-2409-4040-e10-c1ba-740e-427-e86d-20b4.ngrok.io/";

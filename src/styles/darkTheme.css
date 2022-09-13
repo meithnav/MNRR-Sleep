@@ -1,25 +1,21 @@
+.darkBG {
+  background-color: black !important;
+  transition: all 0.5s linear;
+  color: white;
+}
 
-.darkBG{
-    background-color: black !important;
-    transition: all 0.5s linear;
-    color: white;
-  }
-  
-  .lightBG{
-    background-color: rgb(242, 240 ,236);
-    transition: all 0.5s linear;
-  
-  }
-  
+.lightBG {
+  background-color: rgb(242, 240, 236) !important;
+  transition: all 0.5s linear;
+}
 
-  .darkBG_txt{
-        transition: all 0.5s linear;
+.darkBG_txt {
+  transition: all 0.5s linear;
 
-    color: white;
-  }
-  
-  .lightBG_txt{
-    /* color: black; */
-    transition: all 0.5s linear;
-  
-  }
+  color: white !important;
+}
+
+.lightBG_txt {
+  /* color: black; */
+  transition: all 0.5s linear;
+}

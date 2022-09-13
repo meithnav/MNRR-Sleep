@@ -15,9 +15,9 @@ let labels;
 export default function IntensityChart({ value, setValue }) {
   const { user } = useContext(UserContext);
   const [intensity, setIntensity] = useState([]);
-  // const [moveL, setMoveL] = useState(0);
-  // const [moveR, setMoveR] = useState(0);
-  let moveL=0; 
+  const [moveLS, setMoveLS] = useState(0);
+  const [moveRS, setMoveRS] = useState(0);
+  let moveL=0;
   let moveR=0;
 
   const { isLoading, setIsLoading } = useContext(LoadingContext);
@@ -36,7 +36,7 @@ export default function IntensityChart({ value, setValue }) {
       })
       .then((res) => {
         setIntensity(res.data);
-        console.log("INTENSITY: ", res.data);
+        // console.log("INTENSITY: ", res.data);
         setIsLoading(false);
       }).catch = (err) => {
       console.log(err);
@@ -63,28 +63,32 @@ export default function IntensityChart({ value, setValue }) {
     );
 
     intensity.map((ele) => {
-      console.log(ele.movement);
+      // console.log(ele.movement);
       if (ele.movement === "Left") {
-        // setMoveL(moveL + 1);
-        moveL+=1;
-    console.log("LEFT : ", moveL);
+        setMoveLS(()=> (moveLS + 1));
+        // moveL+=1;
+        // console.log("LEFT : ", moveL);
       } else if (ele.movement === "Right") {
-        // setMoveR(moveR + 1);
-        moveR+=1
-            console.log("RIGHT : ", moveR);
-
+        setMoveRS(()=> (moveRS + 1));
+        // moveR+=1
+        // console.log("RIGHT : ", moveR);
       }
+
+      // setMoveLS(moveL);
+            // setMoveRS(moveR);
+
+
     });
 
     console.log("LABELS : ", labels);
     console.log("VALUES : ", value);
 
     setIsLoading(false);
-  }, [intensity, moveR, moveL]);
+  }, [intensity]);
 
   useEffect(() => {
-    console.log("LEFT : ", moveL);
-    console.log("RIGHT : ", moveR);
+    // console.log("LEFT : ", moveL);
+    // console.log("RIGHT : ", moveR);
     setIsLoading(false);
     //  window.location.reload(false);
   }, [value]);
@@ -152,9 +156,17 @@ export default function IntensityChart({ value, setValue }) {
         width={380}
       />
 
-      <div>
-        
-      </div>
+      {/* <div className="movement">
+        <h1>BODY MOVEMENTS OBSERVED </h1>
+        <div>
+          <h3 className="label">LEFT : </h3>
+          <span>{moveLS}</span>
+        </div>
+        <div>
+          <h3 className="label">RIGHT : </h3>
+          <span>{moveRS}</span>
+        </div>
+      </div> */}
     </div>
   );
 }

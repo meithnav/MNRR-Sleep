@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import rightPic from "../../assets/images/sleep.jpeg";
 import "../../styles/banner.css";
 import { ThemeContext } from "../../utils/ThemeContext";
+import { UserContext } from "../../utils/UserContext";
 
 export default function Banner() {
   const { darkMode } = useContext(ThemeContext);
+    const { user } = useContext(UserContext);
+
 
   return (
     <>
@@ -26,6 +29,7 @@ export default function Banner() {
             data-aos="fade-right"
             data-aos-duration="800"
             data-aos-delay="400"
+            className={darkMode ? "darkBG_txt" : ""}
           >
             Anything that isn't managed will decline
           </h1>
@@ -33,7 +37,8 @@ export default function Banner() {
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay="400"
-            href="/monitor"
+            href={user ? "/monitor" : "login"}
+            className={darkMode ? "darkBG_txt" : ""}
           >
             Monitor
           </a>
@@ -41,7 +46,7 @@ export default function Banner() {
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay="400"
-            className="a_last"
+            className={darkMode ? "a_last darkBG_txt" : "a_last"}
             href="/blog"
           >
             Blogs

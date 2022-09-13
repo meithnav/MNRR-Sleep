@@ -23,7 +23,7 @@ export default function Request() {
             <h1
               data-aos="fade-right"
               data-aos-duration="500"
-              data-aos-delay="300"
+              data-aos-delay="0"
               className={darkMode ? "darkBG_txt" : ""}
             >
               Trouble in sleeping ?

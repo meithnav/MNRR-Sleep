@@ -4,6 +4,8 @@ import "../styles/monitor.css";
 import { UserContext } from "../utils/UserContext";
 import axios from "axios";
 import { Button } from "@mui/material";
+import { LoadingContext } from "../utils/LoadingContext";
+import LoaderComp from "../components/LoaderComp";
 
 const videoConstraints = {
   width: 1280,
@@ -20,6 +22,8 @@ const WebcamScreen = () => {
   // let socketPath;
   // let chatSocket;
   const { user } = useContext(UserContext);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
+
   const webcamRef = React.useRef(null);
 
   // useEffect(() => {
@@ -58,6 +62,7 @@ const WebcamScreen = () => {
   }, [webcamRef]);
 
   const stopCapture = () => {
+    // setIsLoading(true);
     clearInterval(interval);
     const now = new Date();
     timeend = new Date(now).getTime();
@@ -75,6 +80,7 @@ const WebcamScreen = () => {
       .then((res) => {
         console.log(res);
         console.log("details saved");
+        // setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -84,6 +90,7 @@ const WebcamScreen = () => {
   useEffect(() => {
     console.log(imageSrc);
     if (imageSrc.frame !== "") {
+      // setIsLoading(true);
       axios
         .post("/frame-capture/receive-data/", imageSrc, {
           headers: {
@@ -92,6 +99,7 @@ const WebcamScreen = () => {
         })
         .then((res) => {
           console.log(res);
+          // setIsLoading(false);
         })
         .catch((err) => {
           console.log(err);
@@ -111,14 +119,14 @@ const WebcamScreen = () => {
         videoConstraints={videoConstraints}
       />
 
-      <Button variant="contained" onClick={capture} className="donateBtn">
+      <Button variant="contained" onClick={capture} className="donateBtn2">
         Start Recording
       </Button>
       <Button
         variant="contained"
         onClick={stopCapture}
-        className="donateBtn"
-        style={{ marginLeft: "10px"}}
+        className="donateBtn2"
+        style={{ marginLeft: "10px" }}
       >
         Stop Recording
       </Button>

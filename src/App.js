@@ -62,7 +62,7 @@ function App() {
           element={<BlogDetails />}
         />
 
-        <Route path="*" element={<Navigate to="/" />} />
+        {/* <Route path="*" elementw={<Navigate to="/" />} /> */}
         {/* {!user && <Route path="*" element={<Navigate to="/login" replace />} />} */}
       </Routes>
       {/* </Router> */}
